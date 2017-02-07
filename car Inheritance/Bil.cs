@@ -14,6 +14,16 @@ namespace car_Inheritance
         public string RegistreringsNr { get; set; }
         public int KmPrLiter { get; private set; }
 
+        /*Constructor*/
+        public Bil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter)
+        {
+            this.Mærke = mærke;
+            this.BilPrisExAfgift = prisExAfgift;
+            this.KøbsÅr = KøbsÅr;
+            this.RegistreringsNr = registreringsNr;
+            this.KmPrLiter = KmPrLiter;
+        }
+
 
         /*Methoder*/
         public virtual int RegistreringsAfgift()
@@ -66,13 +76,7 @@ namespace car_Inheritance
         }
 
 
-        public Bil(string mærke, int prisExAfgift, int købsÅr, int KmPrLiter)
-        {
-            this.Mærke = mærke;
-            this.BilPrisExAfgift = prisExAfgift;
-            this.KøbsÅr = købsÅr;
-            this.KmPrLiter = KmPrLiter;
-        }
+      
 
     }
 }
