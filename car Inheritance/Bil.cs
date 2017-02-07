@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace car_Inheritance
 {
-     public class Bil
+     public abstract class Bil
     {
         public int BilPrisExAfgift { get; private set; }
         public int KøbsÅr { get; private set; }
@@ -68,15 +68,9 @@ namespace car_Inheritance
         public int TotalPris()
         {
             return BilPrisExAfgift + RegistreringsAfgift();
-        } 
-
-        public virtual int HalvÅrligEjerafgift()
-        {
-            return 1000;
         }
 
-
-      
-
+        public abstract int HalvÅrligEjerafgift();
+       
     }
 }

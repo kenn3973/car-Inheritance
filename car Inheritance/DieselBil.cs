@@ -26,19 +26,20 @@ namespace car_Inheritance
            
         }
 
+
         /*Mehtoder*/
         public override int HalvÅrligEjerafgift()
         {
 
             if (PartikelFilter == true)
             {
-                return base.HalvÅrligEjerafgift() + 500;
+                return 1000;
             }
             else
             {
-                return base.HalvÅrligEjerafgift();
+                return 1500;
             }
-           
+
         }
     }
 }
