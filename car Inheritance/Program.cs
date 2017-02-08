@@ -13,7 +13,7 @@ namespace car_Inheritance
 
             List<DieselBil> dieselBilListe = new List<DieselBil>();
             DieselBil d1 = new DieselBil("ford", 100000, 2014, "dad12", 11);
-            DieselBil d2 = new DieselBil("Toyota", 100000, 2014, "dad13", 11);
+            DieselBil d2 = new DieselBil("Toyota", 100000, 2014, "dad13", 26);
             DieselBil d3 = new DieselBil("Ferrari", 100000, 2014, "dad14", 11);
             DieselBil d4 = new DieselBil("Volvo", 100000, 2014, "dad15", 11, false);
             DieselBil d5 = new DieselBil("Smart Car", 100000, 2014, "dad16", 11, false);
