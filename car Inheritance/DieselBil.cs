@@ -11,17 +11,18 @@ namespace car_Inheritance
 
         /*Properties*/
         public bool PartikelFilter { get;  private set; }
-
+        public int Tank { get; private set; }
 
         /*Constructor*/
-        public DieselBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, bool PartikelFilter) 
+        public DieselBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, bool PartikelFilter, int Tank) 
             : base(mærke, prisExAfgift, KøbsÅr, registreringsNr, KmPrLiter)
         {
             this.PartikelFilter = PartikelFilter;
+            this.Tank = Tank;
         }
 
-        public DieselBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter) 
-            :this(mærke, prisExAfgift, KøbsÅr, registreringsNr, KmPrLiter, true)
+        public DieselBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, int Tank) 
+            :this(mærke, prisExAfgift, KøbsÅr, registreringsNr, KmPrLiter, true, Tank)
         {
            
         }
@@ -68,21 +69,11 @@ namespace car_Inheritance
                 return udgift;
             }
 
-
-
-
-
-            //if (PartikelFilter == true)
-            //{
-            //    return 1000;
-            //}
-            //else
-            //{
-            //    return 1500;
-            //}
-
         }
 
-
+        public override int RækkeVidde()
+        {
+            return Tank * KmPrLiter;
+        }
     }
 }

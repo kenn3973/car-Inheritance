@@ -71,6 +71,7 @@ namespace car_Inheritance
         }
 
         public abstract int HalvÅrligEjerafgift();
-       
+
+        public abstract int RækkeVidde();
     }
 }

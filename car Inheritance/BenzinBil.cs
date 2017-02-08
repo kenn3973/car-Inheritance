@@ -9,11 +9,14 @@ namespace car_Inheritance
     sealed class BenzinBil : Bil
     {
 
+        /*Properties*/
+        public int Tank { get; set; }
+
         /*Constructor*/
-        public BenzinBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter) 
+        public BenzinBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, int Tank) 
             : base(mærke, prisExAfgift, KøbsÅr, registreringsNr, KmPrLiter)
         {
-           
+            this.Tank = Tank;   
         }
 
 
@@ -36,6 +39,11 @@ namespace car_Inheritance
             }
 
             return udgift;
+        }
+
+        public override int RækkeVidde()
+        {
+            return Tank * KmPrLiter;
         }
     }
 }
