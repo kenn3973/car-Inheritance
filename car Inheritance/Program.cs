@@ -54,6 +54,29 @@ namespace car_Inheritance
                 Console.WriteLine(BenzinBIl.RækkeVidde());
             }
 
+
+            Console.WriteLine("------------------------El Biler---------------------------");
+            /*EL Bil*/
+            List<ElBil> ElBilLister = new List<ElBil>();
+            ElBil e1 = new ElBil("Tesla", 100000, 2015, "Elon123", 200, 100);
+            ElBil e2 = new ElBil("Tesla", 100000, 2015, "Elon2", 200, 100);
+            ElBil e3 = new ElBil("Tesla", 100000, 2015, "Elon3", 200, 100);
+            ElBil e4 = new ElBil("Tesla", 100000, 2015, "Elon4", 200, 100);
+            ElBil e5 = new ElBil("Tesla", 10000, 2015, "Elon5", 100, 100);
+
+            ElBilLister.Add(e1);
+            ElBilLister.Add(e2);
+            ElBilLister.Add(e3);
+            ElBilLister.Add(e4);
+            ElBilLister.Add(e5);
+
+            foreach (var ElCar in ElBilLister)
+            {
+                Console.WriteLine(ElCar.RegistreringsNr);
+                Console.WriteLine(ElCar.HalvÅrligEjerafgift());
+                Console.WriteLine(ElCar.RækkeVidde());
+                Console.WriteLine("REgAfgift" +  " " +ElCar.RegistreringsAfgift());
+            }
         }
     }
 }

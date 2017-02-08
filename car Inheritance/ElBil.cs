@@ -6,27 +6,26 @@ using System.Threading.Tasks;
 
 namespace car_Inheritance
 {
-     public abstract class Bil
+    class ElBil : Bil
     {
-        public int BilPrisExAfgift { get; private set; }
-        public int KøbsÅr { get; private set; }
-        public string Mærke { get; private set; }
-        public string RegistreringsNr { get; set; }
-        
+        /*Properties*/
+        public int BatteriKapacitet { get; private set; }
+        public int KmPrKW { get; private set; }
+
 
         /*Constructor*/
-        public Bil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr)
+        public ElBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int BatteriKapacitet, int KmPrKw) 
+            : base(mærke, prisExAfgift, KøbsÅr, registreringsNr)
         {
-            this.Mærke = mærke;
-            this.BilPrisExAfgift = prisExAfgift;
-            this.KøbsÅr = KøbsÅr;
-            this.RegistreringsNr = registreringsNr;
-          
+            this.BatteriKapacitet = BatteriKapacitet;
+            this.KmPrKW = KmPrKw;
         }
 
 
+
         /*Methoder*/
-        public virtual int RegistreringsAfgift()
+
+        public override int RegistreringsAfgift()
         {
             int BilAfgift = 0;
 
@@ -34,7 +33,7 @@ namespace car_Inheritance
             {
                 if (BilPrisExAfgift <= 80500)
                 {
-                  BilAfgift =  (BilPrisExAfgift * 105) / 100;
+                    BilAfgift = (BilPrisExAfgift * 105) / 100;
                 }
 
                 if (BilPrisExAfgift > 80500)
@@ -44,9 +43,9 @@ namespace car_Inheritance
                     BilAfgift = sum1 + sum2;
                 }
 
-                
+
             }
-                else if (KøbsÅr >= 2015)
+            else if (KøbsÅr >= 2015)
             {
                 if (BilPrisExAfgift <= 81700)
                 {
@@ -62,18 +61,17 @@ namespace car_Inheritance
 
             }
 
-            return BilAfgift;
+            return (BilAfgift * 20) / 100;
         }
 
-        public int TotalPris()
+        public override int HalvÅrligEjerafgift()
         {
-            return BilPrisExAfgift + RegistreringsAfgift();
+            return 0;
         }
 
-
-        /*Abstracte Methoder*/
-        public abstract int HalvÅrligEjerafgift();
-
-        public abstract int RækkeVidde();
+        public override int RækkeVidde()
+        {
+            return BatteriKapacitet * KmPrKW;
+        }
     }
 }

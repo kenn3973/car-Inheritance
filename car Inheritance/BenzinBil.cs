@@ -11,12 +11,14 @@ namespace car_Inheritance
 
         /*Properties*/
         public int Tank { get; set; }
+        public int KmPrLiter { get; private set; }
 
         /*Constructor*/
         public BenzinBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, int Tank) 
-            : base(mærke, prisExAfgift, KøbsÅr, registreringsNr, KmPrLiter)
+            : base(mærke, prisExAfgift, KøbsÅr, registreringsNr)
         {
-            this.Tank = Tank;   
+            this.Tank = Tank;
+            this.KmPrLiter = KmPrLiter;
         }
 
 

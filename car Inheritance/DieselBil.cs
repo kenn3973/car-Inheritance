@@ -12,13 +12,15 @@ namespace car_Inheritance
         /*Properties*/
         public bool PartikelFilter { get;  private set; }
         public int Tank { get; private set; }
+        public int KmPrLiter { get; private set; }
 
         /*Constructor*/
         public DieselBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, bool PartikelFilter, int Tank) 
-            : base(mærke, prisExAfgift, KøbsÅr, registreringsNr, KmPrLiter)
+            : base(mærke, prisExAfgift, KøbsÅr, registreringsNr)
         {
             this.PartikelFilter = PartikelFilter;
             this.Tank = Tank;
+            this.KmPrLiter = KmPrLiter;
         }
 
         public DieselBil(string mærke, int prisExAfgift, int KøbsÅr, string registreringsNr, int KmPrLiter, int Tank) 
